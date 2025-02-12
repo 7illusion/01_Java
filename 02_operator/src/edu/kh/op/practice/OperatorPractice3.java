@@ -15,10 +15,10 @@ public class OperatorPractice3 {
 		System.out.print("멤버십 있으세요? : ");
 		boolean input2 = sc.nextBoolean();// boolean true false 입력 받기
 		
-		System.out.printf("할인을 포하한 최종금액 : %d" );
+		Double result = input2 == true ? (Double) (input1*0.9) : (Double) (input1*0.95) ;
+		
+		System.out.printf("할인을 포하한 최종금액 : %.1f", result );
 	  
-	
-	
 	}
 	
 	
