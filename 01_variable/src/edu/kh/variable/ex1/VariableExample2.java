@@ -42,7 +42,7 @@ public class VariableExample2 {
 		
 		
 		//문자형(char) 리터럴 표기법 : ' ' (홑따옴표) -> 문자 하나 표기
-		char ch = 'a';
+		char ch = 'A'; //""은 문자열 표기 
 		char ch2 = 66; 
 		/*
 		 * char 자료형에 숫자가 대입될 수 있는 이유 
@@ -50,14 +50,16 @@ public class VariableExample2 {
 		 * 'B' 문자 드개로 대입되면 변수에 숫자 66으로 변환되어 저장
 		 * -> 반대로 생각하면 변수에 애초에 숫자 66 저장 가능
 		 * */
-		System.out.println("ch : " + ch);
-		System.out.println("ch2 : " + ch2);
+		System.out.println("ch : " + ch); //A
+		System.out.println("ch2 : " + ch2); //B
 		
 		//상수란 변하지 않는 값을 의미, 또한 선언 할떄는 모든글자를 대문자로하자 
 		// 여러 단어가 작성시 _ 사용 
 		//자바에서는 한 번만 저장할 수 있는 메모리 의미 ,초기화 이후 다른 데이터 값 대입 불가
 		final int AGE = 1122;
+		final double PI_AGE = 135;
 		//AGE = AGE + 1 ; 이런식의 다른값을 넣을 수 가 없다 
+		
 		/*
 		 * 상수를 사용하는 이유
 		 * 변하면 안되는 고정된 값을 저장할 떄
