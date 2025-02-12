@@ -1,6 +1,7 @@
 package edu.kh.basic;
 
-// 한 줄 주석: 컴파일러가 해석하지 않는 부분
+//코드 변경 테스트
+//한 줄 주석: 컴파일러가 해석하지 않는 부분
 /* 범위 주석 */
 
 // class : 자바 코드가 작성되는 영역
@@ -9,7 +10,7 @@ package edu.kh.basic;
  ctrl + s -> 빠른 저장
  ctrl + f11 -> 실행 단축키
 */
-//syso 
+//syso ;
 
 public class JavaTest {
 	
