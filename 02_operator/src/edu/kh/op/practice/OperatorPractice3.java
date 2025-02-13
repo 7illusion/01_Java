@@ -17,8 +17,14 @@ public class OperatorPractice3 {
 		
 		System.out.printf("할인을 포하한 최종금액 : %d" );
 	  
+	}
 	
-	
+	public void practice2() {
+		
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.print("출금할 금액 입력 : ");
+		int input1 = sc.nextInt();
 	}
 	
 	
