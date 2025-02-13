@@ -13,7 +13,7 @@ public class OperatorPractice2 {
 		
 		String result = input1 >= 20 ? "저는 성인입니다 " : "저는 미성년입니다";
 		String result2 = (19>=input1) && (input1 >= 13) ? "true" : "false";		
-		String result3 = (65<=input1) && (input1 <= 12) ? "true" : "false";	
+		String result3 = (65<=input1) || (input1 <= 12) ? "true" : "false";	
 		
 		System.out.println(result);
 		System.out.println("청소년입니까?  " + result2);
