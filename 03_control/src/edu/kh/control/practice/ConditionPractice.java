@@ -11,17 +11,20 @@ public class ConditionPractice {
 		System.out.print("숫자를 한 개 입력하세요 : ");
 		int input = sc.nextInt();
 		
+		String result;
+		
 		if (input <= 0) {
-			System.out.println("양수만 입력해주세요.");
-			
-		} else if(input % 2 ==0) {
-            System.out.println("짝수입니다.");
+            result = "양수만 입력해주세요." ;	
             
+		} else if(input % 2 ==0) {
+             result = "짝수입니다.";    
+             
 		} else {
-            	System.out.println("홀수입니다.");
+			 result = "홀수입니다."; 
             	
             }
-			
+		System.out.println(result);	
+		
 		}
 
 	
@@ -45,7 +48,7 @@ public class ConditionPractice {
 			System.out.println("불합격입니다.");
 			
 		}else {
-        System.out.printf("국어 : %d\n 수학 : %d\n 영어 : %d\n 합계 : %d\n 평균 : %.1f\n 축하합니다, 합격입니다.", kor, math, eng , sum, avg);
+			System.out.printf("국어 : %d\n 수학 : %d\n 영어 : %d\n 합계 : %d\n 평균 : %.1f\n 축하합니다, 합격입니다.", kor, math, eng , sum, avg);
 		}
 		
 	}
@@ -61,7 +64,7 @@ public class ConditionPractice {
 			System.out.println(moth +"월은 31일까지 있습니다.");
 			break;
 	     case 4: case 6: case 9: case 11:
-			System.out.println(moth + "월은 30일까지 있습니다.");
+	    	 System.out.println(moth + "월은 30일까지 있습니다.");
 			break;
 	     case 2:
 	    	 System.out.println(moth + "월은 28일까지 있습니다.");
@@ -85,8 +88,7 @@ public class ConditionPractice {
 		double bmi = weg/(hth*hth);
 		
 	 //	String result ;   이걸 사용한다면 아래 코딩이 더 심플하게 코딩 가능 
-		
-		
+			
 		if (bmi > 30) {
 			System.out.printf("BMI 지수 : %f\n", bmi);
 			System.out.println("고도 비만");
@@ -151,7 +153,7 @@ public class ConditionPractice {
 			System.out.printf("총점 : %.1f\n", total);
 			System.out.println("Fail [점수 미달]");
 			
-			// 마지막 시험 pass , fail 은 if 문을 하나더 써서 뺴낼수 있다
+			// 마지막 시험 pass , fail 은 중복 if 문을 하나더 써서 뺴낼수 있다
 			
 			
 		}

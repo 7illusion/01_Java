@@ -31,7 +31,7 @@ public class OperatorPractice3 {
 		int amount = sc.nextInt();
 		
 		int fiftyTh = amount / 50000;//5만원권 지폐 갯수
-		//amount = amount % 50000; //잔액을 다시 amount 에 재대입 
+		//amount = amount % 50000; //잔액을 다시 amount 에 재대입 복합대입은 강제 형변환도 해줌 
 		amount %= 50000; // 복합대입 연산자 (%와 = 을 합쳐 사용) <- 위에 줄보다 더 간단히 작성 += ,-= *=,/= 도 있음 
 		
 		int tenTh = amount/10000; // 1만짜리 지폐 갯수

@@ -8,7 +8,7 @@ public class Run1 { // https://eclipse-color-theme.github.io/update/
 		
 //		co.practice1();
 //		co.practice2();
-		co.practice3();
+//		co.practice3();
 //		co.practice4();
 //		co.practice5();
 		

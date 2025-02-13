@@ -91,6 +91,7 @@ public class ConditionExample { //기능제공용 클래스
 	
 		System.out.print("달 입력 : ");
 		int month = sc.nextInt();
+		
 		String season;// 조선문 수행 결과를 저장할 변수 선언 
 		
 		if(month == 1 || month ==2 || month ==12) {

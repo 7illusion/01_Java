@@ -68,16 +68,21 @@ public class OperatorPractice {
 		System.out.printf("합계 : %d\n", sum);
 		System.out.printf("평균 : %.1f\n", avg);
 		
+        boolean result = ( input2 >= 40) && (input3 >= 40) && (input4 >= 40) && (avg >= 60); //  그저 조건문이 true 인지 false 인지 판단해서 result 에 넣을 수 있다 
+		
+		System.out.println( result ? "합격" : "불합격" );
+		
+		
 	   // System.out.printf("합계 : %d\n", input2 + input3 + input4);  
 	   // System.out.printf("평균 : %.1f", (input2 + input3 + input4)/3.0);
 	    
-	    boolean result = (input2 >= 40) && (input3 >= 40) && (input4 >= 40) && (avg >=80) ? true : false;
-	    
-	    String result2 = result == true ? "합격입니다." : "불합격 입니다" ;
-	    
-	    System.out.printf("시험에 %s", result2);
-	    
-				
+//	    boolean result = (input2 >= 40) && (input3 >= 40) && (input4 >= 40) && (avg >=80) ? true : false;
+//	    
+//	    String result2 = result == true ? "합격입니다." : "불합격 입니다" ;
+//	    
+//	    System.out.printf("시험에 %s", result2);
+//	    
+//				
 	}
 	
 }
