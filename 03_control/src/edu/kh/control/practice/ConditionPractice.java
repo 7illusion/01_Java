@@ -128,7 +128,7 @@ public class ConditionPractice {
 		System.out.print("출석 횟수 : ");
 		double qwer = sc.nextDouble();
 		
-		double midscor2 = midscor * 0.2 ; //복합대입 연산자로 midscor *= 0.2 형식으로 가능 
+		double midscor2 = midscor * 0.2 ; //복합대입 연산자로 midscor *= 0.2 형식으로 가능 midcor *= 0.2
 		double finscor2 = finscor * 0.3 ; //복합대입 연산자는 강제 형변환도 해준다 
 		double task2 = task * 0.3 ;
 		

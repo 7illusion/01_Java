@@ -3,6 +3,8 @@ package edu.kh.control.condition;
 import java.awt.dnd.DragSourceMotionListener;
 import java.util.Scanner;
 
+import javax.print.attribute.SupportedValuesAttribute;
+
 public class ConditionExample { //기능제공용 클래스 
 	
 	Scanner sc = new Scanner(System.in); // 한번에 import 로 여러개의 메서드에서 사용 가능 
@@ -44,18 +46,21 @@ public class ConditionExample { //기능제공용 클래스
 		System.out.print("정수 입력 : ");
 		int input1 = sc.nextInt();
 		
+		String result ; 
+		
 		if (input1 % 2 != 0) {
-			System.out.println("홀수입니다.");
+			result = "홀수입니다.";
 			
 		} else { // 짝수 or 0 입력 수행 한번 더 걸러야함 -> if 문 중첩
 
 			if (input1 == 0) {
-				System.out.println("0입니다");
+				result = "0입니다";
 			} else {
-				System.out.println("짝수입니다");
+				result = "짝수입니다" ;
 			}
 
 		}
+		System.out.println(result);
 		
 	}
 	
@@ -68,16 +73,19 @@ public class ConditionExample { //기능제공용 클래스
 		System.out.print("정수 입력 : ");
 		int input = sc.nextInt();
 		
+		String result ;
+		
 		if (input > 0) {
 			
-			System.out.println("양수 입니다");
+			result ="양수 입니다";
 			
 		} else if (input < 0) {
-			System.out.println("음수 입니다");
+			result ="음수 입니다";
 
 		} else {
-			System.out.println("0 입니다");
+			result ="0 입니다";
 		}
+		System.out.println(result);
 			
 	}
 
@@ -89,50 +97,94 @@ public class ConditionExample { //기능제공용 클래스
 		//9~11 가을 
 		//범위에 없는 경우는 "해당하는 계절이 없다" 출력 
 	
+//		System.out.print("달 입력 : ");
+//		int month = sc.nextInt();
+//		
+//		String season;// 조건문 수행 결과를 저장할 변수 선언 
+//		
+//		if(month == 1 || month ==2 || month ==12) {
+//			season = "겨울";
+//			
+//			System.out.print("온도 입력 : ");
+//			int temperature =sc.nextInt();
+//			
+//			if (temperature <= -15) {
+//				season += " 한파 경보"; // -> 시즌에 겨울이 나오면서 한판 경도가 붙어서 출력 
+//			} else if(temperature <= -12) {
+//			    season += " 한파 주의보";
+//
+//			} // else 문은 필요 없는 경우 작성 할 필요가 없다 
+// 			
+//			
+//		} else if(month >=3 && month <= 5) {
+//			season = "봄" ;
+//			
+//		} else if (month >=6 && month <=8) {
+//			season = "여름";
+//			
+//			System.out.print("온도 입력 : ");
+//			int temperature =sc.nextInt();
+//			
+//			if (temperature >= 35) {
+//				season += " 폭염 경보"; // -> 시즌에 겨울이 나오면서 한판 경도가 붙어서 출력 
+//			} else if(temperature  >= 33) {
+//			    season += " 폭염 주의보";
+//
+//			} // else 문은 필요 없는 경우 작성 할 필요가 없다 
+//			
+//		}else if (month >=9 && month <= 11) {
+//			season = "가을";
+//			
+//		}else {
+//			season = "해당하는 계절 없다 ";
+//			
+//		}
+//		
+//		System.out.println(season);
+//===============================아래는 직접한 것 ============================== 		
 		System.out.print("달 입력 : ");
 		int month = sc.nextInt();
+				
+		String season ;
 		
-		String season;// 조선문 수행 결과를 저장할 변수 선언 
-		
-		if(month == 1 || month ==2 || month ==12) {
+		if (month == 1 || month == 1 || month == 12) {
 			season = "겨울";
 			
 			System.out.print("온도 입력 : ");
 			int temperature =sc.nextInt();
 			
-			if (temperature <= -15) {
-				season += " 한파 경보"; // -> 시즌에 겨울이 나오면서 한판 경도가 붙어서 출력 
-			} else if(temperature <= -12) {
-			    season += " 한파 주의보";
-
-			} // else 문은 필요 없는 경우 작성 할 필요가 없다 
- 			
+			if (temperature <= -15 ){
+				season += "한파 경보";
+			} else if (temperature <= -12) {
+				season += "한파 주의보";
+			} else {
+				
+			}
 			
-		} else if(month >=3 && month <= 5) {
-			season = "봄" ;
 			
-		} else if (month >=6 && month <=8) {
-			season = "여름";
-			
-			System.out.print("온도 입력 : ");
-			int temperature =sc.nextInt();
-			
-			if (temperature >= 35) {
-				season += " 폭염 경보"; // -> 시즌에 겨울이 나오면서 한판 경도가 붙어서 출력 
-			} else if(temperature  >= 33) {
-			    season += " 폭염 주의보";
-
-			} // else 문은 필요 없는 경우 작성 할 필요가 없다 
-			
-		}else if (month >=9 && month <= 11) {
-			season = "가을";
-			
-		}else {
-			season = "해당하는 계절 없다 ";
-			
-		}
-		
+			}else if (month == 3 || month == 4 || month == 5) {
+				season = "봄";
+			}else if (month == 6 || month == 7 || month == 8) {
+				season = "여름";
+				
+				System.out.print("온도 입력 : ");
+				int temperature =sc.nextInt();
+				
+				if (temperature >= 35 ){
+					season += "폭염 경보";
+				} else if (temperature >= 33) {
+					season += "폭염 주의보";
+				} else {
+					
+				}
+				
+			}else if (month == 9 || month == 10 || month == 11) {
+				season = "여름";
+			}else {
+				season = "해당하는 계절이 없습니다";
+			}
 		System.out.println(season);
+		
 		
 	}
 
@@ -247,6 +299,7 @@ public class ConditionExample { //기능제공용 클래스
 		
 		System.out.println(result);
 	}
+		
 	
 	public void ex8() {
 
