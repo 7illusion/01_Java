@@ -1,9 +1,6 @@
 package edu.kh.control.condition;
 
-import java.awt.dnd.DragSourceMotionListener;
 import java.util.Scanner;
-
-import javax.print.attribute.SupportedValuesAttribute;
 
 public class ConditionExample { //기능제공용 클래스 
 	

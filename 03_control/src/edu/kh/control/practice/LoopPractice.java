@@ -1,5 +1,6 @@
 package edu.kh.control.practice;
 
+import java.util.Iterator;
 import java.util.Scanner;
 
 public class LoopPractice {
@@ -199,6 +200,74 @@ public class LoopPractice {
 		}
 		
 		
+	}
+	
+	
+	public void practice11() { //팩토리얼 계산기 
+		
+		System.out.print("계산하고 싶은 정수 : ");
+		int n =sc.nextInt();
+		int result = 1;
+		
+		if (n<1) {
+			System.out.println("1이상의 정수를 입력하세요");
+		} else {
+			for (int i = 1; i <= n; i++) {
+				result *= i;
+			}
+			System.out.println(n+"! = "+ result);
+
+		}
+	}
+
+	
+	public void practice12() { //소수 판별기
+		System.out.print("판별하고 싶은 정수 : ");
+		int input = sc.nextInt();
+		int result = 1;
+		
+		if (input<2) {
+			System.out.println("2이상의 숫자를 입력해주세요");
+		} else {
+			boolean isPrime = true ; // 소수인지 여부를 저장할 변수 
+			
+			for (int i = 2; i < input ; i++) { // 2부터 input -1 까지 검사 
+				
+				if (input % i == 0) {
+					isPrime = false;
+					break; // 불필요한 계산을 없에기 위해 필요 
+				} 
+		
+			}
+			
+			if (isPrime) {
+				System.out.println(input +"은(는) 소수입니다. ");
+			} else {
+				System.out.println(input +"은(는) 소수가 아닙니다. ");
+			}
+		}
+			
+	}
+
+	
+	public void ex12() {
+		System.out.print("첫번쨰 정수 입력 : ");
+		int n1 = sc.nextInt();
+		
+		System.out.print("첫번쨰 정수 입력 : ");
+		int n2 = sc.nextInt();
+		
+		int sum2  =0;
+		int sum3  =0;
+		
+		if (n1 < 1 || n2 < 2) {
+			System.out.println("1 이상의 숫자를 입력해주세요");
+		} else if (n1<n2) {
+			
+			
+			
+
+		}
 	}
 	
 	

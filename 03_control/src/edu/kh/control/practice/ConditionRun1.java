@@ -1,6 +1,6 @@
 package edu.kh.control.practice;
 
-public class Run1 { // https://eclipse-color-theme.github.io/update/
+public class ConditionRun1 { // https://eclipse-color-theme.github.io/update/
 
 	public static void main(String[] args) {
 

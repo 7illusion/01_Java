@@ -1,6 +1,6 @@
 package edu.kh.control.condition;
 
-public class ConditionRun { //실향용 클래스 
+public class ConditionExampleRun { //실향용 클래스 
 
 	public static void main(String[] args) {
 
