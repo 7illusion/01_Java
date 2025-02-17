@@ -5,6 +5,7 @@ public class LoopRun {
 	public static void main(String[] args) { //실행용 클래스
 
 		ForExample forex = new ForExample();
+		WhileExample whilex = new WhileExample();
 		
 //		forex.ex1();
 //		forex.ex2();
@@ -14,7 +15,13 @@ public class LoopRun {
 //		forex.ex6();
 //		forex.ex7();
 //		forex.ex8();
-		forex.ex9();
+//		forex.ex9();
+		
+//		whilex.ex1();
+		whilex.ex2();
+		
+		
+		
 		
 	}
 
