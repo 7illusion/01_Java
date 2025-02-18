@@ -251,7 +251,7 @@ public class ArrayExample1 {
 		
 		for (int i = 0; i < arr.length; i++) {
 			
-			if (arr[i].equals(str)) { // string 비교는 .equlas 
+			if (arr[i].equals(str)) { // string 비교는 .equlas 참조형 비교는
 				System.out.println(i + "번쨰 인덱스에 존재");
 				flag = true;
 			}
