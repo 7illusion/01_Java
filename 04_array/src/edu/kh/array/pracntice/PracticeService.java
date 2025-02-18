@@ -48,12 +48,15 @@ public class PracticeService {
 		System.out.print("양의 정수 : ");
 		int input = sc.nextInt();
 		int[] arr = new int[input];
+		//int[] arr = new int[sc.nextInt()];  -> 한 줄로 표현이 가능 
+		
 		
 		for (int i = 0; i < arr.length; i++) {
 			arr[i] = i+ 1;
+			System.out.print(arr[i] + " "); //데이터만 뽑아 씀 
 		}
 		
-		System.out.println(Arrays.toString(arr));
+	//	System.out.println(Arrays.toString(arr));
 		
 	}
 	
@@ -76,7 +79,8 @@ public class PracticeService {
 		for (int i = 0; i < arr.length; i++) {
 			if (arr[i] == input2) {
 				System.out.println("인덱스 : " + i);
-				flag = true;			
+				flag = true;	
+				break;
 			}
 	
 		}
@@ -140,12 +144,14 @@ public class PracticeService {
 			int arrinput = sc.nextInt();
 			arr[i] = arrinput ;
 			
-			sum += arrinput;	
-			
 		}
 		
-		System.out.println(Arrays.toString(arr));
-		System.out.println("총합 : "+ sum);
+		for (int i = 0; i < arr.length; i++) {
+			System.out.print(arr[i] + " ");
+			sum += arr[i] ;
+		}
+		
+		System.out.println("\n총합 : "+ sum);
 						
 	}
 
@@ -259,8 +265,17 @@ public class PracticeService {
 			}
 		}
 		
+		// for (데이터타입 변수명 : 배열 또는 컬렉션) {
+		    // 반복할 코드
+		//  }
+		//✔ 배열 또는 컬렉션에서 하나씩 값을 가져와 변수명에 저장한 후 반복문 실행
+		//✔ 반복 횟수는 배열(또는 컬렉션)의 길이만큼 자동으로 결정됨
+		//✔ index를 직접 사용할 필요 없음 → 코드가 간결해짐
+
+
+		
 		for (int num : arr) { // , 없이 데이터만 출력 
-			System.out.print(num + " ");
+			System.out.print(num + " ");  
 		}
 	}
 	
