@@ -19,10 +19,12 @@ public class PracticeService {
 			if(i % 2 == 0) {
 				sum += arr[i]; 
 			}
-			
+			System.out.print(i + " ");
 		}
-		System.out.println(Arrays.toString(arr));
-		System.out.println("짝수 번째 인덱스 합 : "+ sum);		
+		
+		
+		//System.out.println(Arrays.toString(arr));
+		System.out.println("\n짝수 번째 인덱스 합 : "+ sum);		
 	}
 
 	
@@ -38,8 +40,12 @@ public class PracticeService {
 				}
 				
 			}
-			System.out.println(Arrays.toString(arr));
-			System.out.println("홀수 번째 인덱스 합 : "+ sum);		
+			for (int i : arr) {
+				System.out.print(i + " ");
+			}
+			
+			//System.out.println(Arrays.toString(arr));
+			System.out.println("\n홀수 번째 인덱스 합 : "+ sum);		
 		
 	}
 
@@ -187,10 +193,13 @@ public class PracticeService {
 		int input = sc.nextInt();
 		
 		int[] arr = new int[input];
+		boolean flag =false; 
 		
 		for (int i = 0; i < arr.length; i++) {
 			if (3> input || (input%2 ==0)) {
 				System.out.println("다시 입력하세요");
+				flag = true ;
+				break;
 			} else {
 				for (int j = 0; j <= (arr.length)/2; j++) {
 					arr[j] = j + 1;
@@ -201,8 +210,12 @@ public class PracticeService {
 
 			}
 		}
-		System.out.println(Arrays.toString(arr));
-		
+           for (int i : arr) {
+        	   if (flag == true) {
+				break;
+			}
+			System.out.print(i + " ");
+		}		
 		
 		
 	}
@@ -218,14 +231,19 @@ public class PracticeService {
 			arr[i] = random;
 		}
 		
-		System.out.println("발생한 난수 : " + Arrays.toString(arr));
+		String str = "";
+		
+		for (int i : arr) {
+			str += i + " ";
+		}
+		System.out.print("발생한 난수 : " + str );
 	}
 
 
 	public void practice10() {
 		
 		int[] arr = new int[10];
-	
+		String str = "" ;
 		
 		for (int i = 0; i < arr.length; i++) {
 			int random = (int)(Math.random() * 10 + 1);
@@ -243,7 +261,12 @@ public class PracticeService {
 				min = arr[i] ;
 			}
 		}
-		System.out.println("발생한 난수 : "+ Arrays.toString(arr));
+	
+		for (int i : arr) {
+			str += i + " ";
+		}
+	
+		System.out.println("발생한 난수 : "+ str);
 		System.out.println("최대값 : "+ max);
 		System.out.println("최대값 : "+ min);
 	}
@@ -254,26 +277,28 @@ public class PracticeService {
 		int[] arr = new int[10];
 		
 		for (int i = 0; i < arr.length; i++) {
-			int random = (int) (Math.random() * 10 + 1);
-			arr[i] = random ;
+			
+			arr[i] = (int)(Math.random() * 10 + 1);
+			
 			
 			for (int j = 0; j < i; j++) {
-				if (random == arr[j]) {
+				if (arr[i] == arr[j]) {
 					i--;
 					break;
 				}
+				
 			}
+			
 		}
+			
 		
 		// for (데이터타입 변수명 : 배열 또는 컬렉션) {
 		    // 반복할 코드
 		//  }
-		//✔ 배열 또는 컬렉션에서 하나씩 값을 가져와 변수명에 저장한 후 반복문 실행
-		//✔ 반복 횟수는 배열(또는 컬렉션)의 길이만큼 자동으로 결정됨
-		//✔ index를 직접 사용할 필요 없음 → 코드가 간결해짐
+//✔ 배열 또는 컬렉션에서 하나씩 값을 가져와 변수명에 저장한 후 반복문 실행
+//✔ 반복 횟수는 배열(또는 컬렉션)의 길이만큼 자동으로 결정됨
+//✔ index를 직접 사용할 필요 없음 → 코드가 간결해짐
 
-
-		
 		for (int num : arr) { // , 없이 데이터만 출력 
 			System.out.print(num + " ");  
 		}
@@ -282,16 +307,73 @@ public class PracticeService {
 	
 	public void practice12(){
 		
+	int[] arr = new int[10];
+		
+		for (int i = 0; i < arr.length; i++) {
+			
+			arr[i] = (int)(Math.random() * 45 + 1);
+			
+			for (int j = 0; j < i; j++) {
+				if (arr[i] == arr[j]) {
+					i--;
+					break;
+				}
+				
+			}
+			
+		}
+		Arrays.sort(arr); //오름차순 정렬
+			
+		for (int i : arr) {
+			System.out.print(i + " ");
+		}
 		
 	}
 	
 	
 	public void practice13(){
 		//1.사용자에게 문자열 입력받기
+		System.out.print("문자열 : ");
+		String input = sc.nextLine();
+		
+		int count = 0;
 		
 		//2.해당 문자열의 문자들을 char[]에 담기 
+		char[] arr = new char[input.length()];
 		
-		//3.char 배열에서 중복값 존재할 경우 출력 x 
+		for (int i = 0; i < arr.length; i++) {
+			arr[i] = input.charAt(i);
+		}
+		
+		System.out.print("문자열에 있는 문자 : ");
+		
+		for (int i = 0; i < arr.length; i++) {
+			
+			boolean flag = true ;
+			
+			for (int j = 0; j < arr.length; j++) { // 중복검사만
+				if (arr[i] == arr[j]) {
+					flag = false ;
+					break; // 중복 있다면 flag을 false로 하여 다음 if문이 넘어가게 만듬
+				}
+			}
+			
+			if (flag) { //중복이 발생 안했을떄
+				
+				if ( i == 0) { //출력하는데 첫글자는 , 가 없어야 하기에
+					System.out.print(arr[i]);
+				} else {
+					System.out.print(", " + arr[i]);
+
+				}
+				count ++ ; //중복 아닐때만 카운트 
+			}
+			
+			
+		}
+		
+		
+		
 		
 		
 	}
