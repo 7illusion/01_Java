@@ -351,7 +351,7 @@ public class PracticeService {
 			
 			boolean flag = true ;
 			
-			for (int j = 0; j < arr.length; j++) { // 중복검사만
+			for (int j = 0; j < i; j++) { // 중복검사만
 				if (arr[i] == arr[j]) {
 					flag = false ;
 					break; // 중복 있다면 flag을 false로 하여 다음 if문이 넘어가게 만듬
@@ -360,7 +360,7 @@ public class PracticeService {
 			
 			if (flag) { //중복이 발생 안했을떄
 				
-				if ( i == 0) { //출력하는데 첫글자는 , 가 없어야 하기에
+				if (i == 0) { //출력하는데 첫글자는 , 가 없어야 하기에
 					System.out.print(arr[i]);
 				} else {
 					System.out.print(", " + arr[i]);
@@ -369,8 +369,8 @@ public class PracticeService {
 				count ++ ; //중복 아닐때만 카운트 
 			}
 			
-			
 		}
+		System.out.println("\n문자 개수 : "+count);
 		
 		
 		

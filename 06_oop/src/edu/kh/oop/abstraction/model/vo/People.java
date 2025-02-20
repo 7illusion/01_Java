@@ -52,11 +52,12 @@ public class People {//국민(사람) 클래스
 	//getter 와 setter을 자동 완성으로 만들어줌 
 
 	public String getName() {
-		return name;
+		return name; //return 은 name  반환 
 	}
 
 	public void setName(String name) {
-		this.name = name;
+		this.name = name;  //this 은 p1 이나 p2 에 있는 name이라는 필드에 작성됨
+		                   //오른쪽 name 은 매개변수이다 
 	}
 
 	public char getGender() {
