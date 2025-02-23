@@ -10,32 +10,33 @@ public class SnackMenu {
 	
 	private SnackController scr = new SnackController();
 	
+	// view : 사용자에게 보여줄 응답화면 관련된 코드가 모인 패키지
+	
 	public void menu() {
 		System.out.println("스낵류를 입력하세요.");
 		
-		System.out.println("종류 : ");
-		String kind = sc.nextLine();
+		System.out.print("종류 : ");
+		String kind = sc.next();
 		
-		System.out.println("이름 : ");
-		String name = sc.nextLine();
+		System.out.print("이름 : ");
+		String name = sc.next();
 		
-		System.out.println("맛 : ");
-		String flavor = sc.nextLine();
+		System.out.print("맛 : ");
+		String flavor = sc.next();
 		
-		System.out.println("개수 : ");
+		System.out.print("개수 : ");
 		int numOf = sc.nextInt();
 		
-		System.out.println("가격 : ");
-		String price = sc.nextLine();
-		sc.nextLine();
+		System.out.print("가격 : ");
+		int price = sc.nextInt();
 		
-		System.out.println("저장 완료되었습니다.");
+		System.out.print(scr.saveData(kind, name, flavor, numOf, price));
 		
-		System.out.println("저장한 정보를 확인하시겠습까? (Y/N) : ");
-		String input = sc.next();
+		String input = sc.next(); // y/n 입력 
+		
 		
 		if(input.equals("y")) {
-			System.out.println();
+			System.out.println(scr.confirmData());
 		}
 		
 		

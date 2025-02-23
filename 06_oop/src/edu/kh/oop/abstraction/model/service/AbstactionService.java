@@ -6,8 +6,8 @@ import edu.kh.oop.abstraction.model.vo.People;
 //(비밀번호 -> 암호화, 파일 -> 유효한 파일 걸러내는 작업...)
 public class AbstactionService {
 	//속성과 기능은 필요 없다면 넣을 필요가 없다 
-	//메소드 안쪽에 생기는 변수는 스택에 생김 
-	public void ex1() {
+
+	public void ex1() {  	//메소드 안쪽에 생기는 변수는 스택에 생김 
 		//people 클래스를 이용해서 국민 객체 만들기 
 		People p1 = new People();
 		//People p1 : People 객체의 주소를 저장하여 참조하는 변수 p1==참조변수
@@ -34,7 +34,7 @@ public class AbstactionService {
 		
 		// 전달하는 값(인자) : 전달인자 
         p1.setName("홍길동");//전달해서 다시 return 
-		System.out.println(	p1.getName()); //gerName을 해야지 홍길동이 나옴
+		System.out.println(	p1.getName()); //getName을 해야지 홍길동이 나옴
 			
 		p1.setGender('남'); // 전달 
 		System.out.println(p1.getGender());

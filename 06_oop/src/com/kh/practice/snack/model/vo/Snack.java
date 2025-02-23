@@ -21,7 +21,9 @@ public class Snack {
 		this.price = price;
 	}
 
-	public String information() {} 
+	public String information() {
+		return kind +"(" + name +" - " + flavor + ") " + numof + "개 " + price + "원";
+	} 
 	
 	
 	
