@@ -13,10 +13,35 @@ public class Heroservice {
 		
 		Hero wizard = new Hero("Zi존위자드","마법사",100,100,1,0);
 		
-		System.out.println(warrior.toString());
-		System.out.println(wizard.toString());
+	
 		
-		System.out.printf("======%s의 시정======" , warrior.getNickname());
+		System.out.printf("\n======%s의 시점======" , warrior.getNickname());
+		warrior.attack(100);
+		warrior.attack(50.5);
+		warrior.attack(49.5);
+		warrior.dash();
+		warrior.dash();
+		System.out.printf(warrior.toString(),
+				           warrior.getNickname(),
+				           warrior.getLevel(),
+				           warrior.getHp(),
+				           warrior.getMp(),
+				           warrior.getExp());
+		
+		
+
+		System.out.printf("\n======%s의 시점======" , wizard.getNickname());
+		wizard.attack(300);
+		wizard.dash();
+		wizard.attack(300);
+		wizard.attack(300);
+		wizard.dash();
+		System.out.printf(wizard.toString(),
+				wizard.getNickname(),
+				wizard.getLevel(),
+				wizard.getHp(),
+				wizard.getMp(),
+				wizard.getExp());
 		
 		
 		

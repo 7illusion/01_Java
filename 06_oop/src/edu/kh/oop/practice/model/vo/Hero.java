@@ -28,35 +28,42 @@ public class Hero {
 						+ "현재레벨 : %d\n"
 						+ "현재 hp : %d\n"
 						+ "현재 mp : %d\n"
-						+ "현재 경험치 : %d\n",job ,nickname,level,hp,mp,exp );
+						+ "현재 경험치 : %.1f\n",job ,nickname,level,hp,mp,exp );
 	}
 	
 	public void attack(double exp) {
 		this.exp += exp ;
 		
-		System.out.printf("'%s' 은/는 공격을 했다!! 현재 경험치 : %,1f ",nickname,this.exp);
+		System.out.printf("\n'%s' 은/는 공격을 했다!! 현재 경험치 : %.1f ",nickname,this.exp);
 		
 		if(this.exp >= 300) {
 			this.level ++ ;
-			System.out.printf("레벨이 올랐습니다! 현재레벨 : %d",level);
+			System.out.printf("\n레벨이 올랐습니다! 현재레벨 : %d",level);
 		}
 		
 	}
 	
 	public void dash() {
 		this.mp -= 10 ;
-		System.out.printf("'%s'은/는 엄청 빠른 대시! 남음 마력 : %d",nickname,this.mp);
+		System.out.printf("\n'%s'은/는 엄청 빠른 대시! 남음 마력 : %d",nickname,this.mp);
 		if (this.mp<=0) {
-			System.out.println("마력부족 더 이상 대시 할 수 없어요");
+			System.out.println("\n마력부족 더 이상 대시 할 수 없어요");
 		}
 		
 	}
 	
-	
 
 	
-
+	@Override
+	public String toString() {
+		return "\n====='%s'님의 정보=====\n" +
+	            "-현재 레벨 : %d\n"+
+				"-현재 hp : %d\n"+
+	            "-현재 mp : %d\n"+
+				"-현재 경험치 : %.1f";
+	}
 	
+
 	public String getNickname() {
 		return nickname;
 	}
