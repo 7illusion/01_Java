@@ -8,7 +8,6 @@ public class SnackController {
 	private Snack s = new Snack();
 
 	public SnackController() {
-		super();
 	}
 	// 메서드
 		// 데이터를 setter를 이용하여 저장하고,

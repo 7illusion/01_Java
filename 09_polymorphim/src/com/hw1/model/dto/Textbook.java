@@ -20,14 +20,10 @@ public class Textbook extends Book {
 		this.subject = subject;
 	}
 	
-@Override
-public String toString() {
-	return "[전문 서적]" + super.toString() + " / 과목 : " + subject ;
-}
 
 	@Override
 	public void displayInfo() {
-		System.out.print("[전문 서적]");
+		System.out.printf("[전문 서적] 제목 : %s / 저자 : %s / 과목 : %s",getTitle(),getAuthor(),subject);
 
 		
 	}

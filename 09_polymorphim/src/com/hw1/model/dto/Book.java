@@ -30,10 +30,7 @@ public abstract class Book {
 	}
 	
 	
-	@Override
-	public String toString() {
-		return "제목 : " + title + " / 저자 : " + author  ;
-	}
+	
 
 	public abstract void displayInfo();
 

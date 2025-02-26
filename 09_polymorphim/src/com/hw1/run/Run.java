@@ -11,14 +11,15 @@ public class Run {
 		
 		
 		Book[] bookArr = new Book[3] ;
-		Novel nov = new Novel() ; 
+		
 		
 		bookArr[0] = new Novel("해리포터", "J.K. 롤링" ,"판타지");
 		bookArr[1] = new Textbook("자바 프로그래밍" , "James Gosling","컴퓨터 과학");
 		bookArr[2] = new Poetry("우리들의 사랑시" , "김소월" ,30);
 		
-		for (int i = 0; i < bookArr.length; i++) {
-			System.out.println(bookArr[i]);
+		for (Book book : bookArr) { // 여기서 book은 그저 for 문에 i 같은 역할 
+			book.displayInfo();
+			System.out.println();
 		}
 		
 	

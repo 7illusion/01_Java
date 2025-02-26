@@ -20,16 +20,12 @@ public class Poetry extends Book {
 		this.numberIfPoems = numberIfPoems;
 	}
 	
-
-@Override
-public String toString() {
-	return "[시집]" + super.toString() + " / 시 수 : " +numberIfPoems;
-}
-
 	@Override
 	public void displayInfo() {
-		System.out.print("[시집]" + toString());
-		
+		System.out.printf("[시집] 제목 : %s / 저자 : %s / 시 수 : %d",
+				getTitle(), getAuthor(), numberIfPoems
+				);
 	}
+
 
 }
