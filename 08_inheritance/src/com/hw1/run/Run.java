@@ -10,7 +10,7 @@ public class Run {
 
 	public static void main(String[] args) {
 		
-		Scanner sc =new Scanner(System.in);
+		Scanner sc = new Scanner(System.in);
 		
 		Student[] arr = new Student[3];
 		arr[0] = new Student("홍길동",20,178.2,70,1,"정보시스템광학과");
