@@ -22,6 +22,10 @@ public class Run {
 			System.out.println();
 		}
 		
+		for (int i = 0; i < bookArr.length; i++) {
+			bookArr[i].displayInfo();
+			System.out.println();
+		}
 	
 		
 		
