@@ -41,7 +41,7 @@ public class ExceptionService { // 예외 처리되는 경우
 			//e 를 사용하여 예외 추적코드 작성할수도 있음
 			System.out.println("infinity");
 			e.printStackTrace();
-			//발생한 예회에 대한 메서드와 위치에 대한 모든 내용을 출력
+			//발생한 예외에 대한 메서드와 위치에 대한 모든 내용을 출력
 			//예외 발생지점 추적 메서드
 		}
 		

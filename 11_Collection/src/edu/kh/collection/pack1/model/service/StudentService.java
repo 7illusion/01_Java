@@ -1,9 +1,13 @@
-package edu.kh.collection.pack1.model.dto;
+package edu.kh.collection.pack1.model.service;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
+
+import edu.kh.collection.pack1.model.dto.Student;
 
 public class StudentService {
 	
@@ -36,8 +40,8 @@ public class StudentService {
 			System.out.println("2.학생 정보 전체 조회");
 			System.out.println("3.학생 정보 수정");
 			System.out.println("4.학생 정보 제거");
-			System.out.println("5.이름으로 검색(일치)");
-			System.out.println("6.이름으로 검색(포함)");
+			System.out.println("5.이름으로 검색(일치)"); // 완전 일치 검색 정확히 입력해야함
+			System.out.println("6.이름으로 검색(포함)"); // 한글자만 포함해도 다 검색
 			System.out.println("7.나이순으로 정렬"); //comparable 사용 
 			System.out.println("8.이름순으로 정렬"); //comparator 사용 
 			System.out.println("0,프로그램 종료");
@@ -51,11 +55,11 @@ public class StudentService {
 				case 1: System.out.println(addStudent()); break;
 				case 2: selectAll(); break;
 				case 3: System.out.println(updateStudent());break;
-				case 4: /*removeStudent*/ break;
-				case 5: /*serchName1*/break;
-				case 6: /*serchName2*/break;
-				case 7: /*sortByAge*/break;
-				case 8: /*sortByName*/break;
+				case 4: System.out.println(removeStudent()); break;
+				case 5:  serchName1();break;
+				case 6:  serchName2(); break;
+				case 7:  sortByAge(); break;
+				case 8:  sortByName();break;
 				case 0:System.out.println("프로그램 종료"); break ;	
 				default:System.out.println("있는 번호만 입력");
 					
@@ -109,7 +113,6 @@ public class StudentService {
 		
 	}
 	
-
 	/**
 	 * 2.학생 전체 조회 메서드
 	 * List 가 비어있는 경우 "학생 정보가 없습니다" 출력 
@@ -207,7 +210,6 @@ public class StudentService {
 		
 	}
 	
-
 	/**
 	 * 4.학생 정보 제거 메서드 
 	 * 수정과 같은 검사 후 삭제 시
@@ -217,11 +219,11 @@ public class StudentService {
 	 * @return
 	 */
 	public String removeStudent() {
+
 		//student List.remove(int index) 
 		//리스트에서 index번쨰 요소를 제거 
 		//이떄 제거되 요소가 반환 
 		
-
 		System.out.println("====학생 정보 수정=====");
 		
 		System.out.print("인덱스 번호 : ");
@@ -234,7 +236,7 @@ public class StudentService {
 		if(index < 0) {
 			return "음수는 입력할 수 없습니다" ;
 		}
-		if (index >= studentList.size()) {
+		if (index >= studentList.size()) {// 배열은 lengh 이지만 컬렉션은 size 로 길이를 측정  
 			return "범위내 값을 입력하세요" ;
 		}
 		
@@ -249,8 +251,114 @@ public class StudentService {
 		return "취소" ;
 			
 	}
+
+	/**
+	 * 5.완전 일치 검색 이름
+	 * 검색할 이름을 입력받아 studentList에서 꺼내온 Student 객체의name 값이 같은지 비교
+	 * 
+	 * 일치하는 경우 student 객체 출력
+	 * 일치한는게 없다면 "검색 결과가 없음" 출력
+	 */
+	public void serchName1() {
+		System.out.println("=======이름 완전 일치==========");
+		
+		System.out.print("검색할 이름 : ");
+		String input = sc.next();
+		
+		boolean flag = true ;
+		
+		for(Student std : studentList) {
+			if(input.equals(std.getName())) {// 이름이 일치하는 경우
+				System.out.println(std); // std.toString 과 같은 효과
+				flag = false ;
+			}
+		}
+		if(flag == true) {
+			System.out.println("검색 결과가 없습니다.");
+		}
+		
+	}
 	
+	/**
+	 * 6.이름에 특정 문자열이 포함되는 학생을 찾아서 조회하는 메서드
+	 * 문자열 입력받아 studentList에서 꺼내온 
+	 * Student 객체의 name 값에 포함되는 문자열인지 검사
+	 * 포함하는 경우 student 객체 출력
+	 * 포함한는게 없다면 "검색 결과가 없음" 출력
+	 */
+	public void serchName2() {
+
+		System.out.println("=======이름 부분포함  일치==========");
+		
+		System.out.print("검색할 이름 : ");
+		String input = sc.next();
+		
+		boolean flag = true ;
+		
+		//boolean String.contains(문자열) : String에 문자열이 포함되어있으면 true 아니면 false
+		for(Student std : studentList) {
+			if(std.getName().contains(input)) {// getName에 input이 포함되어있는냐 순서 중요
+				System.out.println(std); // std.toString 과 같은 효과
+				flag = false ;
+			}
+		}
+		if(flag == true) {
+			System.out.println("검색 결과가 없습니다.");
+		}
+		
+	}
 	
+	/**
+	 * 7.나이순으로 정렬 오름차순 정렬 
+	 * 
+	 * List를 정렬하는 방법
+	 * 1.comparable 인터페이스 상속받아 compareTo 메서드 재정의
+	 * Student Comparable 인터페이스를 상속받아 오버라이딩한 compareTo()에
+	 * 정의한 대로 정렬됨
+	 * 2.comparator 클래스에 의한 정렬 campare() 사용(익명 내부 클래스 이용)
+	 * 익명 내부 클래스 : 이름이 없는 클래스를 즉성에서 선언해서 한번만 사용할 목적으로  작성
+	 * 객체를 생성하면서 바로 구현 내용을 정의할 수 있음
+	 * 익명 내부클래스 장점 
+	 * -코드 간결화 (별도 클래스 작성 필요 x)
+	 * -즉시사용 가능 정의하면 바로 객체화 됨 
+	 * -지역화(특정 메서드 안에서만 필요할 떄)
+	 */
+	public void sortByAge() {
+		
+		Collections.sort(studentList) ;
+		
+		for(Student std : studentList){
+			System.out.println(std);
+		}
+		
+	}
+	
+	/**
+	 * 8.이름에 따라 정렬 (가나다순)
+	 */
+	public void sortByName() {
+		//익명 내부 클래스는 Comparator 인터페이스를 상속받아 구현한 구현체 (==클래스)
+		Collections.sort(studentList, new Comparator<Student>() {
+
+			@Override
+			public int compare(Student o1, Student o2) {
+				//이름 비교 
+				return o1.getName().compareTo(o2.getName()) ; //가나다 순으로 나옴 
+				//String형은 compareTo 로 비교
+				//String.compareTo: 자바에서 객체를 비교하는 메서드 
+				//String이 comparable을 상속받아 재정의 
+				
+				//comareTo() 두 객체를 비교하고 순서 결정
+				//반환값 0같은 양수 왼쪽이 더 큼 음수 오른쪽이 더 큼 
+				
+			}
+		});
+		
+		for(Student std : studentList) {
+			System.out.println(std);
+		}
+		
+	}
 	
 	
 	//Object List.get(index) : 리스트에서 index번째 인덱스에 있는 객체를 반환 
