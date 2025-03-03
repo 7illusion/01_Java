@@ -59,7 +59,7 @@ public class Phone {
 
 	@Override
 	public String toString() {
-		return super.toString() + "\nBrand : " + brand + "\n" + "Model : " + model + "\n"
+		return  "Brand : " + brand + "\n" + "Model : " + model + "\n"
 			                 	+ "Year : " + year + "\n" + "price : " + price + "\n";
 	}
 	

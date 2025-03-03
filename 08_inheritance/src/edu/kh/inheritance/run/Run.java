@@ -16,13 +16,13 @@ public class Run {
 //		ih.ex2();
 //		ih.ex4();
 		
-		Phone ph = new Phone();
+//		Phone ph = new Phone();
 		
 		SmartPhone sph = new SmartPhone("Samsung", "Galaxy S20", 2020,1200000, "Android", 128);
-		System.err.println(sph);
-		System.out.println("===================================");
+		System.out.print(sph.toString());
+		System.out.print("===================================");
 		BasicPhone bph = new BasicPhone("Nokia","3310",2000,100000 ,true);
-		System.out.println(bph);
+		System.out.println(bph.toString());
 		bph.checkKeyboard();
 		
 		

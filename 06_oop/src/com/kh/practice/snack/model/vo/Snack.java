@@ -26,8 +26,6 @@ public class Snack {
 	} 
 	
 	
-	
-	
 	public String getKind() {
 		return kind;
 	}
