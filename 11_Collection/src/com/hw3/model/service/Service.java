@@ -14,6 +14,8 @@ public class Service {
 	
 	List<Book>bookList =new ArrayList<>();
 	
+	List<Book> favList = new ArrayList<Book>(); //즐겨찾기 저장
+	
 
 	public Service() {
 		bookList.add(new Book(1111,"세이노의 가르침","세이노",6480,"데이원"));
@@ -46,9 +48,9 @@ public class Service {
 				
 				switch (num) {
 				case 1: addBook();  break;
-				case 2: bookSeach();  break;
-				case 3:/*도서수정*/  break;
-				case 4:/*도서삭제*/  break;
+				case 2: bookSeach(bookList);  break;
+				case 3: updateBook();  break;
+				case 4:   break;
 				case 5:/*즐겨찾기 추가*/  break;
 				case 6:/*즐겨찾기 삭제*/  break;
 				case 7:/*즐겨찾기 조회map*/  break;
@@ -65,7 +67,7 @@ public class Service {
 					
 			}
 				
-		} while (num == 0);
+		} while (num != 0);
 		
 	}
 
@@ -99,7 +101,7 @@ public class Service {
 	}
 	
 	
-	public void bookSeach() {
+	public void bookSeach(List<Book> bookList2) { // List<Book> list 을 넣으므로 어떤 List<Book> 을 처리 가능 재사용성 높아짐 
 		for (Book book : bookList) {
 			System.out.println(book);
 		}
@@ -116,8 +118,21 @@ public class Service {
 		int input = sc.nextInt();
 		sc.nextLine();
 		
+		Book foundBook = null; //찾은 책을 저장할 변수 초기화
+		for (Book book : bookList) { //bookList를 순회
+			if(book.getBookNumber() == input) {
+				foundBook = book ; // 일치하는 책을 foundBook에 저장
+				break ; //찾으면 종료
+			}
+		}
+		
+		if (foundBook == null) {
+			System.out.println("해당 도서를 찾을 수 없습니다");
+			return ;
+		}
+		
+		
 	do {
-		if(book.getBookNumber() == input) {
 			
 			System.out.println("1.도서명");
 			System.out.println("2.도서 저자");
@@ -137,30 +152,41 @@ public class Service {
 				break ;
 				
 			case 2 :
-				System.out.println("===도서명 수정===");
-				System.out.print("수정할 도서명을 입력하세요");
+				System.out.println("===도서저자 수정===");
+				System.out.print("수정할 저자명을 입력하세요");
 				String author = sc.nextLine();
 				book.setAuthor(author);
 				break;
+			case 3 :
+				System.out.println("===도서 가격 수정===");
+				System.out.print("수정할 가격을 입력하세요");
+                int price = sc.nextInt();
+				book.setPrice(price);
+				break;
+			case 4 :
+				System.out.println("===도서 출판사 수정===");
+				System.out.print("수정할 출판사를 입력하세요");
+				String pup = sc.nextLine();
+				book.setPub(pup);
+				break;
+			case 0 :
+				System.out.println("===수정 완료===");
+				break;
+				default : System.out.println("메뉴를 선택하세요"); break ;
 			}
 			
-		}
-		
 	
-	} while (bookInput != 0);
-		
-		
-		
-	
-		
-		
-		
-		
+	} while (bookInput != 0);	
 		
 		
 	}
 	
 	
+	public void deleteBook() {
+		System.out.println("===도서 삭제===");
+		bookSeach(bookList);
+		
+	}
 
 }
 
