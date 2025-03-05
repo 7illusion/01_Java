@@ -6,30 +6,37 @@ import java.util.Map;
 import java.util.Scanner;
 import java.util.Set;
 import java.util.TreeMap;
-import java.util.TreeSet;
 
 import com.toyFactory.model.dto.Toy;
 
-public class ToyFactory extends Toy{
-	Scanner sc = new Scanner(System.in);
+public class ToyFactory {
 	
-	Set<Toy>toySet = new HashSet<Toy>();
-	Map<Integer, String>mapSet = new TreeMap<>();
+	private Scanner sc = new Scanner(System.in);
 	
-	public void  addToy(String toyName, int age ,int price ,String clolor ,String madeNumber,int...materialIds) {
-		Set<String> materials = new TreeSet<>();
-		for(int id : materialIds) {
-			if (mapSet.containsKey(id)) {
-				materials.add(mapSet.get(id));
-			}
+	private Set<Toy>toySet = new HashSet<Toy>();
+	private Map<Integer, String>mapSet = new TreeMap<>();
+			
+	/**
+	 * 매개변수로 전달받은 값들을 재료저장 Map에 있는지 확인하고 Set형태로 반환하는 메서드
+	 * 가변인자 작성법 : 자료형...변수명 -> 매개변수의 수가 정확히 몇개인지 특정할 수 없을 때 사용
+	 * -> 배열처럼 동작한다 자바에서 가변 인자는 배열로 변환되기 때문에 반복문을 사용가능
+	 * @return
+	 */
+	public Set<String> addMaterials(Integer... materialIds) {
+		//매개변수로 전달받은 재료를 저장하여 반환할 Set객체를 생성
+		Set<String> addedMaterials = new HashSet<String>();
+		
+		for(Integer materialKey : materialIds) {
+			
+			//재료가 저장되어 있는 map 에서 키값에 대응하는 
+			//재료명을 가져와서 addedMaterials에 추가
+			String materialValue = mapSet.get(materialKey);	
+
+			//재료 목록에 있다면 재료명을 addedMaterials 에 넣어줌
+			if(materialValue != null ) {
+				addedMaterials.add(materialValue);			}
 		}
-		
-		
-	} 
-	
-	public void addMaterials(int... materialIds) {
-		
-		
+		return addedMaterials ;  // 넣어준 Set 을 반환해줌 (추가가 되었다면 추가가 된 상태로 )
 	}
 	
 	
@@ -40,7 +47,7 @@ public class ToyFactory extends Toy{
 		mapSet.put(4, "고무");
 		
 	
-		addToy("마마롱레그",8,36000,"분홍색","199950805",1,4);
+		toySet.add(new Toy("마마롱레그",8,36000,"분홍색","199950805", addMaterials(1,4)));
 		
 	}
 	
@@ -53,9 +60,9 @@ public class ToyFactory extends Toy{
 			System.out.println("1.전체 장난감 조회");
 			System.out.println("2.새로운 장난감 만들기");
 			System.out.println("3.장난감 삭제하기");
-			System.out.println("4.장난감 제조일 순으로 조회하기"); //compareTo
+			System.out.println("4.장난감 제조일 순으로 조회하기"); 
 			System.out.println("5.연령별 사용 가능한 장난감 리스트 조회"); 
-			System.out.println("6.재료 추가");  //map
+			System.out.println("6.재료 추가");  
 			System.out.println("7.재료 삭제"); 
 			System.out.println("0,프로그램 종료");
 			
